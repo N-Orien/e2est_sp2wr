@@ -1,0 +1,75 @@
+# network architecture
+# encoder related
+elayers: 12
+eunits: 2048
+# decoder related
+dlayers: 8
+dunits: 2048
+# attention related
+adim: 256
+aheads: 4
+
+# multitask
+mtlalpha: 0.0
+asr-weight: 0.1
+conv-weight: 0.2
+mt-weight: 0.0
+
+# Cross attention
+lang-tok: decoder-pre
+cross-weight: 0.3
+cross-weight-learnable: True
+cross-self: False
+cross-src: True
+cross-st2asr: True
+cross-asr2st: True
+cross-st2conv: True
+cross-conv2st: True
+cross-conv2asr: False
+cross-asr2conv: False
+cross-operator: sum
+cross-src-from: before-src
+wait-k-asr: 0
+wait-k-conv: 0
+
+# label smoothing
+report-interval-iters: 1000
+lsm-weight: 0.1
+
+# minibatch related
+batch-size: 24 # per-gpu batch_size (original: 64)
+maxlen-in: 512  # if input length  > maxlen-in, batchsize is automatically reduced
+maxlen-out: 150 # if output length > maxlen-out, batchsize is automatically reduced
+
+# saving interval
+n-iter-processes: 24
+
+# optimization related
+sortagrad: 0 # Feed samples from shortest to longest ; -1: enabled for all epochs, 0: disabled, other: enabled for 'other' epochs
+opt: noam
+accum-grad: 2
+grad-clip: 10
+epochs: 75
+patience: 1000
+early-stop-criterion: validation/main/bleu
+time-limit: 100000
+dropout-rate: 0.1
+
+# transformer specific setting
+backend: pytorch
+model-module: "espnet.nets.pytorch_backend.e2e_st_transformer_triple:E2ETripleDecoder"
+transformer-input-layer: conv2d     # encoder architecture type
+transformer-lr: 2.5
+transformer-warmup-steps: 10000
+transformer-attn-dropout-rate: 0.0
+transformer-length-normalized-loss: false
+transformer-init: pytorch
+
+# pre-training related
+enc-init-mods: encoder.embed,encoder.encoders,encoder.after_norm
+dec-init-mods: triple_decoder.embed,triple_decoder.embed_asr,triple_decoder.embed_conv,triple_decoder.triple_decoders,triple_decoder.triple_decoders_asr,triple_decoder.triple_decoders_conv,triple_decoder.after_norm,triple_decoder.after_norm_asr,triple_decoder.after_norm_conv,triple_decoder.output_layer,triple_decoder.output_layer_asr,triple_decoder.output_layer_conv
+
+enc-init: /mnt/elm/zd-yang/joint-asr-st/speech-translation/egs/lmt/asr_ku_united/exp/train_sp.sp-en.sp_lc.rm_pytorch_asr_csj-ku_united_original/results/model.val5.avg.best
+dec-init: /mnt/elm/zd-yang/joint-asr-st/speech-translation/egs/aspec/mt_os/exp/train.ja-en.en_pytorch_mt_os_dict/results/model.val5.avg.best
+
+init-from-decoder-mt: True
