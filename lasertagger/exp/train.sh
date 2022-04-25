@@ -30,11 +30,11 @@ conda activate lasertagger
 
 ### Required parameters (modify before calling the script!) ###
 
-# Download the WikiSplit data from:
+# You can download the WikiSplit data from:
 # https://github.com/google-research-datasets/wiki-split
-WIKISPLIT_DIR=../data_conv
+DATA_DIR=../data_conv
 # Preprocessed data and models will be stored here.
-OUTPUT_DIR=output
+OUTPUT_DIR=./output
 # Download the pretrained BERT model:
 # https://storage.googleapis.com/bert_models/2018_10_18/cased_L-12_H-768_A-12.zip
 BERT_BASE_DIR=/larch/share/bert/Japanese_models/Wikipedia/L-24_H-1024_A-16_E-30_BPE_WWM
