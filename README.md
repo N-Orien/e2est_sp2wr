@@ -16,5 +16,5 @@ Please define your own $DATA_DIR, $OUTPUT_DIR, $BERT_BASE_DIR and $INPUT_DIR in 
 You can use the [yml file](speech-translation/joint_asr_st.yml) to build the conda environment.
 
 Please refer to [this repository](https://github.com/formiel/speech-translation) for environment building, data preparation and model training.
-Noted the suffix for languages in our inplementation is different. For dual-decoder, we use "sp" for source language and "en" for target language. For triple-decoder, we use "sp" for spoken-style source language, "wr" for written-style source language and "en" for target language. 
+Noted that the suffix for languages in our inplementation is different. For dual-decoder, we use "sp" for source language and "en" for target language. For triple-decoder, we use "sp" for spoken-style source language, "wr" for written-style source language and "en" for target language. 
 You can refer to [the example data directory](speech-translation/data_st) for data preparation.
