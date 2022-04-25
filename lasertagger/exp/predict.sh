@@ -35,6 +35,8 @@ OUTPUT_DIR=./output
 # Download the pretrained BERT model:
 # https://storage.googleapis.com/bert_models/2018_10_18/cased_L-12_H-768_A-12.zip
 BERT_BASE_DIR=/larch/share/bert/Japanese_models/Wikipedia/L-24_H-1024_A-16_E-30_BPE_WWM
+# Directory containing input files for prediction
+INPUT_DIR=
 
 ### Optional parameters ###
 
@@ -50,7 +52,6 @@ EXPERIMENT=experiment_lmt_2019_1st_human_v2_large_ff_zenkaku
 TIMESTAMP=$(ls "${OUTPUT_DIR}/models/${EXPERIMENT}/export/" | \
             grep -v "temp-" | sort -r | head -1)
 SAVED_MODEL_DIR=${OUTPUT_DIR}/models/${EXPERIMENT}/export/${TIMESTAMP}
-DATA_PATH=
 
 for setname in train dev test; do
   python ../predict_main.py \
