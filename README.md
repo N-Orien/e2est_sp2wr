@@ -4,11 +4,11 @@
 
 ## Spoken-to-Written Style Conversion
 
-You can use the [yml file](lasertagger/lasertagger.yml) to build the conda environment.
+You can use the [yml file](lasertagger/exp/lasertagger.yml) to build the conda environment.
 
 Refer to [the example data directory](lasertagger/data_conv) to prepare data for training.
 
-[train.py](lasertagger/train.py) and [predict.py](lasertagger/predict.py) are the scripts for training and inference.
+[train.py](lasertagger/exp/train.py) and [predict.py](lasertagger/exp/predict.py) are the scripts for training and inference.
 Please define your own $DATA_DIR, $OUTPUT_DIR, $BERT_BASE_DIR and $INPUT_DIR in the scripts.
 
 convert.sh is a script for converting
