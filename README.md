@@ -11,7 +11,7 @@ Refer to [the example data directory](lasertagger/data_conv) to prepare data for
 [train.sh](lasertagger/exp/train.sh) and [predict.sh](lasertagger/exp/predict.sh) are the scripts for training and inference.
 Please define your own $DATA_DIR, $OUTPUT_DIR, $BERT_BASE_DIR and $INPUT_DIR in the scripts.
 
-If you have the ST data for training ASR-ST Dual Decoder ([example](speech-translation/data_st/dual_sp)), you can use [convert_st_data.sh](lasertagger/exp/convert_st_data.sh) to build the data directories for training Conversion-ST Dual Decoder and Triple Decoder.
+If you have the ST data for training ASR-ST Dual Decoder ([example](speech-translation/data_st)), you can use [convert_st_data.sh](lasertagger/exp/convert_st_data.sh) to build the data directories for training Conversion-ST Dual Decoder and Triple Decoder.
 
 ## Multi-decoder Speech-to-text Translation with Interactive Attention
 
