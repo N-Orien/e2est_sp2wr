@@ -11,6 +11,8 @@ Refer to [the example data directory](lasertagger/data_conv) to prepare data for
 [train.py](lasertagger/train.py) and [predict.py](lasertagger/predict.py) are the scripts for training and inference.
 Please define your own $DATA_DIR, $OUTPUT_DIR, $BERT_BASE_DIR and $INPUT_DIR in the scripts.
 
+convert.sh is a script for converting
+
 ## Multi-decoder Speech-to-text Translation with Interactive Attention
 
 You can use the [yml file](speech-translation/joint_asr_st.yml) to build the conda environment.
