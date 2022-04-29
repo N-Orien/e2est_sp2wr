@@ -36,7 +36,7 @@ OUTPUT_DIR=./output
 # https://storage.googleapis.com/bert_models/2018_10_18/cased_L-12_H-768_A-12.zip
 BERT_BASE_DIR=/larch/share/bert/Japanese_models/Wikipedia/L-24_H-1024_A-16_E-30_BPE_WWM
 # Directory containing input files for prediction
-INPUT_DIR=
+INPUT_DIR=./temp
 
 ### Optional parameters ###
 
